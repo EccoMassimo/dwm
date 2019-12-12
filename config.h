@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;       	/* border pixel of windows */
+static const unsigned int borderpx  = 1;       	/* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -11,7 +11,7 @@ static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#555555";
 static const char col_gray3[]       = "#aaaaaa";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#555555";
+static const char col_cyan[]        = "#aa00aa";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -49,7 +49,7 @@ static const Layout layouts[] = {
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+
 
 /* helper for spawning shell commands in the pre massimo-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -68,8 +68,11 @@ static const char *scrot[] = { "xfce4-screenshooter", NULL };
 static const char *alsa[] = { "st", "-e", "alsamixer", NULL };
 static const char *htop[] = { "st", "-e", "htop", NULL };
 
+static const char *i3lock[] = {"i3lock", "-c", "000000", NULL};
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_l,                  spawn,          {.v = i3lock } },
 	{ MODKEY,                       XK_F1,                 spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_F2,                 spawn,          {.v = filecmd } },
 	{ MODKEY,                       XK_F3,                 spawn,          {.v = textedit } },
@@ -84,7 +87,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Left,               setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_Right,              setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return,             zoom,           {0} },
-	{ MODKEY,                       XK_Tab,                view,           {0} },
 	{ MODKEY,                       XK_q,                  killclient,     {0} },
 	{ MODKEY,                       XK_t,                  setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                  setlayout,      {.v = &layouts[1]} },
