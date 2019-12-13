@@ -40,7 +40,6 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
 };
 
 /* key definitions */
@@ -90,7 +89,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_q,                  killclient,     {0} },
 	{ MODKEY,                       XK_t,                  setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,                  setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,                  setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,              setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,              togglefloating, {0} },
 	{ MODKEY,                       XK_comma,              focusmon,       {.i = -1 } },
