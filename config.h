@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ" };
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -61,7 +61,6 @@ static const char *termcmd[]  = { "st", NULL };
 /* Program Shortcuts */
 static const char *browsercmd[] = { "icecat", NULL };
 static const char *filecmd[] = { "pcmanfm", NULL };
-static const char *textedit[] = { "mousepad" , NULL };
 static const char *discord[] = { "discord", NULL };
 static const char *scrot[] = { "xfce4-screenshooter", NULL };
 static const char *alsa[] = { "st", "-e", "alsamixer", NULL };
@@ -74,8 +73,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,                  spawn,          {.v = i3lock } },
 	{ MODKEY,                       XK_F1,                 spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_F2,                 spawn,          {.v = filecmd } },
-	{ MODKEY,                       XK_F3,                 spawn,          {.v = textedit } },
-	{ MODKEY,                       XK_F4,                 spawn,          {.v = discord } },
+	{ MODKEY,                       XK_F3,                 spawn,          {.v = discord } },
 	{ MODKEY,                       XK_Print,              spawn,          {.v = scrot } },
 	{ MODKEY, 			XK_Scroll_Lock,        spawn,          {.v = alsa } },
 	{ MODKEY,                       XK_Pause,              spawn,          {.v = htop } },
