@@ -1,21 +1,21 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;       	/* border pixel of windows */
+static const unsigned int borderpx  = 3;       	/* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const unsigned int gappih    = 0;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 0;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
-static const char *fonts[]          = { "DejaVu Sans Mono:size=10" };
-static const char dmenufont[]       = "DejaVu Sans Mono:size=10";
+static const char *fonts[]          = { "Terminus:size=12" };
+static const char dmenufont[]       = "Terminus:size=12";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#555555";
-static const char col_gray3[]       = "#aaaaaa";
-static const char col_gray4[]       = "#ffffff";
+static const char col_gray3[]       = "#AAAAAA";
+static const char col_gray4[]       = "#FFFFFF";
 static const char col_cyan[]        = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Alsamixer",     NULL,       NULL,       0,            1,           -1 },
+	{ "Alsamixer",     NULL,       NULL,       0,            1,           0 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -48,7 +48,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
