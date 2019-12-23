@@ -12,15 +12,15 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const char *fonts[]          = { "DejaVu Sans Mono:size=10" };
 static const char dmenufont[]       = "DejaVu Sans Mono:size=10";
-static const char col_gray1[]       = "#000000";
-static const char col_gray2[]       = "#555555";
-static const char col_gray3[]       = "#AAAAAA";
-static const char col_gray4[]       = "#FFFFFF";
-static const char col_cyan[]        = "#005577";
+static const char col_gray1[]       = "#1d1f21";
+static const char col_gray2[]       = "#282a2e";
+static const char col_gray3[]       = "#707880";
+static const char col_gray4[]       = "#ffffff";
+static const char col_cyan[]        = "#282a2e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_gray3 },
+	[SchemeSel]  = { col_gray4, col_gray2,  col_gray3 },
 };
 
 /* tagging */
@@ -64,7 +64,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 /* Program Shortcuts */
-static const char *browsercmd[] = { "chromium", NULL };
+static const char *browsercmd[] = { "icecat", NULL };
 static const char *filecmd[] = { "pcmanfm", NULL };
 static const char *guitext[] = { "codium", NULL };
 static const char *msg[] = { "claws-mail", NULL };
