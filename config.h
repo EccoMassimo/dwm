@@ -64,7 +64,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 /* Program Shortcuts */
-static const char *browsercmd[] = { "icecat", NULL };
+static const char *browsercmd[] = { "chromium", NULL };
 static const char *filecmd[] = { "pcmanfm", NULL };
 static const char *guitext[] = { "codium", NULL };
 static const char *msg[] = { "claws-mail", NULL };
