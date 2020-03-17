@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;       	/* border pixel of windows */
+static const unsigned int borderpx  = 2;       	/* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -12,15 +12,15 @@ static const unsigned int gappov    = 0;       /* vert outer gap between windows
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const char *fonts[]          = { "DejaVu Sans Mono:size=10" };
 static const char dmenufont[]       = "DejaVu Sans Mono:size=10";
-static const char col_gray1[]       = "#1d1f21";
-static const char col_gray2[]       = "#282a2e";
-static const char col_gray3[]       = "#707880";
+static const char col_gray1[]       = "#000000";
+static const char col_gray2[]       = "#cccccc";
+static const char col_gray3[]       = "#555555";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#282a2e";
+static const char col_cyan[]        = "#056839";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_gray2,  col_gray3 },
+	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_gray3 },
 };
 
 /* tagging */
@@ -67,15 +67,17 @@ static const char *volumedown[] = { "amixer", "set", "Master", "10%-", NULL};
 
 /* Program Shortcuts */
 static const char *browsercmd[] = { "chromium-browser-privacy", NULL };
-static const char *filecmd[] = { "nautilus", NULL };
+static const char *filecmd[] = { "pcmanfm", NULL };
 static const char *guitext[] = { "codium", NULL };
-static const char *msg[] = { "geary", NULL };
+static const char *msg[] = { "Discord", NULL };
+static const char *email[] = { "claws-mail", NULL };
 static const char *scrot[] = { "xfce4-screenshooter", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_F6,                 spawn,          {.v = volumeup} },
-	{ MODKEY,                       XK_F5,                 spawn,          {.v = volumedown} },
+	{ MODKEY,                       XK_F5,                 spawn,          {.v = email} },
+	{ MODKEY,                       XK_plus,               spawn,          {.v = volumeup} },
+	{ MODKEY,                       XK_minus,              spawn,          {.v = volumedown} },
 	{ MODKEY,                       XK_F1,                 spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_F2,                 spawn,          {.v = filecmd } },
 	{ MODKEY,                       XK_F3,                 spawn,          {.v = guitext } },
